@@ -1,6 +1,6 @@
 from distutils.core import setup, Extension
 
-module = Extension("fib_module", sources=["fibonacci.c"])
+module = Extension("fibonacci", sources=["fibonacci.c"])
 
 setup(
     name="Fibonacci",

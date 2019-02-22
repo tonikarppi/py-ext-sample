@@ -15,7 +15,7 @@ int fibonacci(int n)
   return b;
 }
 
-static PyObject *py_fibonacci(PyObject *self, PyObject *args)
+static PyObject *fib_object(PyObject *self, PyObject *args)
 {
   int n;
 
@@ -28,24 +28,24 @@ static PyObject *py_fibonacci(PyObject *self, PyObject *args)
   return Py_BuildValue("i", fibonacci(n));
 }
 
-static PyObject *py_version(PyObject *self)
+static PyObject *version_object(PyObject *self)
 {
   return Py_BuildValue("s", "1.0.0");
 }
 
-static PyMethodDef py_methods[] = {
-    {"fib", py_fibonacci, METH_VARARGS, "Calculates the fibonacci numbers."},
-    {"version", (PyCFunction)py_version, METH_NOARGS, "Returns the program version."},
+static PyMethodDef methods[] = {
+    {"fib", fib_object, METH_VARARGS, "Calculates the fibonacci numbers."},
+    {"version", (PyCFunction)version_object, METH_NOARGS, "Returns the program version."},
     {NULL, NULL, 0, NULL}};
 
-static struct PyModuleDef fib_module = {
+static struct PyModuleDef fibonacci_module = {
     PyModuleDef_HEAD_INIT,
-    "fib_module",
+    "fibonacci",
     "Fibonacci module",
     -1,
-    py_methods};
+    methods};
 
-PyMODINIT_FUNC PyInit_fib_module(void)
+PyMODINIT_FUNC PyInit_fibonacci(void)
 {
-  return PyModule_Create(&fib_module);
+  return PyModule_Create(&fibonacci_module);
 }

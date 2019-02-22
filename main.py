@@ -1,6 +1,6 @@
-import fib_module
+import fibonacci
 
-result = fib_module.fib(30)
+print(fibonacci.version())
 
+result = fibonacci.fib(10)
 print(result)
-print(fib_module.version())
