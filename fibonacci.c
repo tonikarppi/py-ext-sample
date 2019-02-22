@@ -6,7 +6,7 @@ int fibonacci(int32_t n)
   int64_t a = 0;
   int64_t b = 1;
 
-  for (int32_t i = 0; i < n - 1; ++i)
+  for (int32_t i = 1; i < n; ++i)
   {
     int64_t s = a + b;
     a = b;
