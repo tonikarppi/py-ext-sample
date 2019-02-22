@@ -1,8 +1,8 @@
 *
 
-!.gitignore
-
 !main.py
 !setup.py
 
 !fibonacci.c
+
+!.gitignore
