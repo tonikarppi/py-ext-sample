@@ -1,7 +1,7 @@
 #include <Python.h>
 #include <stdint.h>
 
-int fibonacci(int32_t n)
+int64_t fibonacci(int32_t n)
 {
   int64_t a = 0;
   int64_t b = 1;
