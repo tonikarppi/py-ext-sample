@@ -1,13 +1,14 @@
 #include <Python.h>
+#include <stdint.h>
 
-int fibonacci(int n)
+int fibonacci(int32_t n)
 {
-  int a = 0;
-  int b = 1;
+  int64_t a = 0;
+  int64_t b = 1;
 
-  for (int i = 0; i < n - 1; ++i)
+  for (int32_t i = 0; i < n - 1; ++i)
   {
-    int s = a + b;
+    int64_t s = a + b;
     a = b;
     b = s;
   }
